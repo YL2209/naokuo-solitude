@@ -1,0 +1,478 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>This is my movie title | 王卓Sco</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg"><!-- index.css--><link rel="stylesheet" href="/css/index.css?v=1.5.1"><!-- inject head--><link rel="stylesheet" href="https://cdn.cbd.int/solitude-source/icon/scoicon.min.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css"><!-- aplayer--><link rel="stylesheet" href="https://cdn.cbd.int/aplayer@1.10.1/dist/APlayer.min.css"><!-- swiper--><link rel="stylesheet" href="https://cdn.cbd.int/swiper@11.0.5/swiper-bundle.min.css"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.css"><!-- Open Graph--><meta name="description" content="This is my movie quote .hexo-douban-tabs { margin-bottom: 15px; margin-top: 15px; } .hexo-douban-tab { padding: 5px; tex"><!-- pwa--><script>(win => {
+        win.saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay,
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
+
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
+
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        }
+
+        const DarkModeStatus = localStorage.getItem('theme')
+        if (DarkModeStatus !== null) {
+            if (DarkModeStatus === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark')
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light')
+            }
+        }
+
+        const asideStatus = saveToLocal.get('aside-status')
+        if (asideStatus !== undefined) {
+            if (asideStatus === 'hide') {
+                document.documentElement.classList.add('hide-aside')
+            } else {
+                document.documentElement.classList.remove('hide-aside')
+            }
+        }
+    }
+)(window)
+
+console.log(
+    "%c Program: Hexo %c Theme: Hexo-Theme-Solitude %c Version: v1.5.1",
+    "border-radius:5px 0 0 5px;padding: 5px 10px;color:white;background:#ff3842;margin:10px 0",
+    "padding: 5px 10px;color:white;background:#3e9f50;",
+    "border-radius:0 5px 5px 0;padding: 5px 10px;background:#0084ff;"
+);</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    }
+}
+initTheme()</script><!-- global head--><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: undefined,
+    localsearch: undefined,
+    runtime: '2023-04-20 00:00:00',
+    lazyload: {
+        enable: true,
+        error: '/img/error_load.png'
+    },
+    hightlight: {
+        enable: true,
+        limit: 200,
+        expand: false,
+        copy: true,
+    },
+    randomlinks: true,
+    lang: {
+        theme: {
+            dark: '已切换至深色模式',
+            light: '已切换至浅色模式',
+        },
+        copy: {
+            success: '复制成功',
+            error: '复制失败',
+        },
+        backtop: '返回顶部',
+        time: {
+            recent: '最近',
+            yesterday: '昨天',
+            berforeyesterday: '前天',
+            daybefore: '天前',
+            runtime: '天',
+        },
+        search: {
+            empty: '找不到你查询的内容：${query}',
+            hit: '找到 ${hits} 条结果，用时 ${time} 毫秒',
+            placeholder: '输入关键词快速查找',
+        },
+        chs: {
+            chs_to_cht: '繁體中文',
+            cht_to_chs: '简体中文',
+        }
+    },
+    aside: {
+        sayhello: {
+            morning: '一日之计在于晨',
+            noon: '吃饱了才有力气干活',
+            afternoon: '集中精力，攻克难关',
+            night: '不要太劳累了，早睡更健康',
+            goodnight: '睡个好觉，保证精力充沛',
+        },
+        sayhello2: ["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多","🎮 电竞游戏爱好者"],
+    },
+    covercolor: {
+        enable: true
+    },
+    comment: {
+        enable: false,
+        type: '',
+        commentBarrage: false,
+        randomInfoStart: ["聪敏的","可爱的","美丽的"],
+        randomInfoEnd: ["白菜","小可爱","小仙女"],
+        twikoo: {
+            url: '',
+            accessToken: ''
+        },
+        waline: {
+            url: '',
+        }
+    },
+    lightbox: 'fancybox',
+    rightside: {
+        enable: true
+    },
+    ai: {
+        enable: false,
+        key: '',
+        talk: '我是王卓Sco开发的摘要生成助理ScoGPT，ScoGPT在静态部署时进行摘要的撰写，并且在访客访问时通过ScoCorrection转译后的文本摘要实现工具。我在这里只负责已经生成的摘要显示，你无法与我直接沟通，但我可以回答一些预设的问题。',
+        randomPost: false,
+    },
+    music: {
+        enable: true,
+    },
+    translate: {"defaultEncoding":2,"translateDelay":0},
+};</script><meta name="generator" content="Hexo 7.1.1"></head><body id="body"><!-- universe--><canvas id="universe"></canvas><!-- loading--><div id="loading-box" onclick="preloader.endLoading();" style="zoom:1"><div class="loading-bg"><img class="loading-img nolazyload" src="https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg" alt="loading image"></div></div><script>const preloader = {
+    endLoading: () => {
+        document.getElementById('loading-box').classList.add('loaded');
+    },
+    initLoading: () => {
+        document.getElementById('loading-box').classList.remove('loaded');
+    },
+    removePaceDone: () => {
+        document.getElementById('body').classList = 'pace-done';
+    }
+}
+window.addEventListener('load', () => {
+    preloader.endLoading();
+});
+window.addEventListener('pjax:send', () => {
+    preloader.initLoading();
+});
+document.addEventListener('pjax:complete', () => {
+    preloader.endLoading();
+});</script><!-- console--><div id="console"><div class="close-btn" onclick="sco.hideConsole()"><i class="scoicon sco-close-fill"></i></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="昼夜切换" href="javascript:void(0);"><i class="scoicon sco-moon-clear-fill"></i></a></div><div class="console-btn-item" id="consoleHideAside"><a class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制" href="javascript:void(0);"><i class="scoicon sco-side-bar-fill"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="sco.musicToggle()"><a class="music-switch" title="音乐开关" href="javascript:void(0);"><i class="scoicon sco-disc-fill"></i></a></div></div><div class="console-mask" onclick="sco.hideConsole()"></div></div><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()" href="javascript:void(0);"><i class="scoicon sco-moon-clear-fill"></i><span>显示模式</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文库</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="scoicon  sco-folder-fill"></i><span>文章列表</span></a></li><li><a class="site-page child" href="/categories/"><i class="scoicon  sco-checkbox-multiple-blank-fill"></i><span>全部分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="scoicon  sco-price-tag-fill"></i><span>全部标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/moment/"><i class="scoicon  sco-wifi-fill"></i><span>友链鱼塘</span></a></li><li><a class="site-page child" href="/links/"><i class="scoicon  sco-group-fill"></i><span>友情链接</span></a></li><li><a class="site-page child" href="javascript:travelling()"><i class="scoicon  sco-gift-fill"></i><span>宝藏博主</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="scoicon  sco-image-fill"></i><span>相册集</span></a></li><li><a class="site-page child" href="/equipment/"><i class="scoicon  sco-laptop-line"></i><span>装备</span></a></li><li><a class="site-page child" href="/tlink/"><i class="scoicon  sco-tools-fill"></i><span>工具箱</span></a></li><li><a class="site-page child" href="/music/"><i class="scoicon  sco-disc-fill"></i><span>音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>关于</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="scoicon  sco-contacts-fill"></i><span>关于本站</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="card-tag-cloud"></div></div></div></div><!-- keyboard--><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><div class="back-home-button" tabindex="-1"><i class="back-home-button-icon scoicon sco-more-fill"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://myxiaochuang.gitee.io/" title="Gitee博客"><img class="back-menu-item-icon" data-lazy-src="https://cdn.cbd.int/naokuo-blog-static@1.0.12/img/pwa/favicon.ico" alt="Gitee博客"><span class="back-menu-item-text">Gitee博客</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.naokuo.top/" title="博客"><img class="back-menu-item-icon" data-lazy-src="https://cdn.cbd.int/naokuo-blog-static@1.0.12/img/pwa/favicon.ico" alt="博客"><span class="back-menu-item-text">博客</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.naokuo.top/" title="主页"><img class="back-menu-item-icon" data-lazy-src="https://cdn.cbd.int/naokuo-blog-static@1.0.12/img/pwa/favicon.ico" alt="主页"><span class="back-menu-item-text">主页</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.npmjs.com/package/hexo-tag-echarts-plus" title="Echarts标签"><img class="back-menu-item-icon" data-lazy-src="https://cdn.cbd.int/naokuo-blog-static@1.0.12/img/pwa/favicon.ico" alt="Echarts标签"><span class="back-menu-item-text">Echarts标签</span></a></div></div></div></div><a id="site-name" href="/" title="返回博客主页"><span class="title">Solitude</span></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">This is my movie title</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文库</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="scoicon  sco-folder-fill"></i><span>文章列表</span></a></li><li><a class="site-page child" href="/categories/"><i class="scoicon  sco-checkbox-multiple-blank-fill"></i><span>全部分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="scoicon  sco-price-tag-fill"></i><span>全部标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/moment/"><i class="scoicon  sco-wifi-fill"></i><span>友链鱼塘</span></a></li><li><a class="site-page child" href="/links/"><i class="scoicon  sco-group-fill"></i><span>友情链接</span></a></li><li><a class="site-page child" href="javascript:travelling()"><i class="scoicon  sco-gift-fill"></i><span>宝藏博主</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/gallery/"><i class="scoicon  sco-image-fill"></i><span>相册集</span></a></li><li><a class="site-page child" href="/equipment/"><i class="scoicon  sco-laptop-line"></i><span>装备</span></a></li><li><a class="site-page child" href="/tlink/"><i class="scoicon  sco-tools-fill"></i><span>工具箱</span></a></li><li><a class="site-page child" href="/music/"><i class="scoicon  sco-disc-fill"></i><span>音乐馆</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>关于</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="scoicon  sco-contacts-fill"></i><span>关于本站</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="travellings_button"><a class="site-page" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html" title=""><i class="scoicon sco-train-line"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机一篇文章" href="javascript:void(0);"><i class="scoicon sco-signal-tower-fill"></i></a></div><div class="nav-button" id="nav-console"><a class="console_switchbutton" onclick="sco.showConsole()" title="中控台" href="javascript:void(0);"><i class="scoicon sco-dashboard-fill"></i></a></div><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="scoicon sco-arrow-up-line"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="scoicon sco-menu-line"></i></a></div></div></div></nav></header><main id="blog-container"><div class="layout hide-aside" id="content-inner"><div id="page"><div id="article-container"><blockquote>
+    <p>This is my movie quote</p>
+</blockquote>
+
+<style>
+    
+.hexo-douban-tabs {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.hexo-douban-tab {
+    padding: 5px;
+    text-decoration: none !important;
+}
+
+.hexo-douban-tab-active {
+    background: #657b83;
+    color: #fff !important;
+}
+
+.hexo-douban-item {
+    position: relative;
+    clear: both;
+    min-height: 170px;
+    padding: 10px 0;
+    border-bottom: 1px #ddd solid;
+}
+
+@media screen and (max-width: 600px) {
+    .hexo-douban-item {
+        width: 100%;
+    }
+}
+
+.hexo-douban-picture {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 100px;
+}
+
+.hexo-douban-info {
+    padding-left: 120px;
+}
+
+.hexo-douban-meta {
+    overflow: hidden;
+    display: -webkit-box;
+    font-size: 12px;
+    line-height: 16px;
+    padding-right: 10px;
+    margin-top: 5px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4
+}
+
+.hexo-douban-rating {
+    overflow: hidden;
+    display: -webkit-box;
+    font-size: 12px;
+    padding-right: 10px;
+    margin-top: 8px;
+}
+
+.hexo-douban-comment {
+    font-size: 12px;
+}
+
+.hexo-douban-pagination {
+    margin-top: 15px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.hexo-douban-button {
+    padding: 5px;
+    text-decoration: none !important;
+}
+
+.hexo-douban-button:hover {
+    background: #657b83;
+    color: #fff !important;
+    opacity: 1;
+}
+</style>
+
+<div class="hexo-douban-tabs">
+    <a class="hexo-douban-tab hexo-douban-tab-do" href="javascript:;"
+       rel="external">
+        在看
+        (1)</a>
+    <a class="hexo-douban-tab hexo-douban-tab-wish" href="javascript:;"
+       rel="external">
+        想看
+        (2)</a>
+    <a class="hexo-douban-tab hexo-douban-tab-collect" href="javascript:;"
+       rel="external">
+        已看
+        (73)</a>
+</div>
+<div class="hexo-douban-items">
+</div>
+
+<div class="hexo-douban-pagination">
+    <a class="hexo-douban-button hexo-douban-firstpage" href="javascript:;"> 首页</a>
+    <a class="hexo-douban-button hexo-douban-previouspage" href="javascript:;">上一页</a>
+    <span class="hexo-douban-pagenum">1 / 1</span>
+    <a class="hexo-douban-button hexo-douban-nextpage" href="javascript:;">下一页</a>
+    <a class="hexo-douban-button hexo-douban-lastpage" href="javascript:;">尾页</a>
+</div>
+
+<script>
+    (function () {
+        let data = {
+            wish: [{"title":"可不可以不要离开我","alt":"https://movie.douban.com/subject/35295085/","image":"https://minio.mythsman.com/douban/ce84112bfb18fa84184f6e3af8527ab1.jpg","meta":"剧情 / 爱情 / 张炭 / 张炭 / 郭涛 / 卢靖姗 / 贾冰 / 陈乔恩 / 吴樾 / 克拉拉 / 盛以婕 / 姜皓文 / 朱鉴然 / 2022-12-24(中国大陆)","rating":"2023-02-09","comment":""},{"title":"分手清单","alt":"https://movie.douban.com/subject/35358443/","image":"https://minio.mythsman.com/douban/b232ff086d508956dcac9724d6b85f29.jpg","meta":"爱情 / 吕晨鸣 / 宋小君 / 吕晨鸣 / 宋小君 / 韩庚 / 郑恺","rating":"2023-02-07","comment":""}],
+            do: [{"title":"林深见鹿","alt":"https://movie.douban.com/subject/35479983/","image":"https://minio.mythsman.com/douban/d022b00fb62405c409a83c1d06681466.jpg","meta":"剧情 / 爱情 / 任增超 / 任增超 / 靳东 / 李小冉 / 张瑜 / 岳旸 / 张瑶 / 曹磊 / 牛莉 / 刘姝彤 / 黄家婧 / 王梓权 / 徐百慧","rating":"2023-02-20 / ★★★★☆ 推荐","comment":""}],
+            collect: [{"title":"回廊亭","alt":"https://movie.douban.com/subject/35401290/","image":"https://minio.mythsman.com/douban/0630940026b796101cd3d04a1d01934b.jpg","meta":"爱情 / 悬疑 / 犯罪 / 文宁 / 许渌洋 / 张仕栋 / 来牧宽 / 文宁 / 许渌洋 / 张仕栋 / 来牧宽 / 任素汐 / 刘敏涛 / 胡可 / 吴昊宸 / 张隽溢 / 李传缨 / 芦芳生 / 侯雯元 / 汤敏 / 王宫良 / 明星","rating":"2023-04-04 / ★★★★★ 力荐","comment":""},{"title":"不能错过的只有你","alt":"https://movie.douban.com/subject/36213001/","image":"https://minio.mythsman.com/douban/7a9a0a7a1fcd9edd9036ebcbd903c532.jpg","meta":"剧情 / 爱情 / 杨烁 / 李萌萌 / 刘流 / 艾如 / 熊睿玲 / 钟小丹 / 李若男 / 2023-04-01(中国大陆)","rating":"2023-04-04 / ★★★★☆ 推荐","comment":""},{"title":"铃芽的门锁 すずめの戸締まり","alt":"https://movie.douban.com/subject/35371261/","image":"https://minio.mythsman.com/douban/9dfa0d68d8fd8bea44855b3ae09ced46.jpg","meta":"动画 / 新海诚 / 新海诚 / 原菜乃华 / 松村北斗 / 深津绘里 / 染谷将太 / 伊藤沙莉 / 花濑琴音 / 花泽香菜 / 松本幸四郎 / 神木隆之介 / 2022-11-11(日本)","rating":"2023-03-26 / ★★★★★ 力荐","comment":""},{"title":"不能流泪的悲伤","alt":"https://movie.douban.com/subject/36153321/","image":"https://minio.mythsman.com/douban/13a0e2da3c6449e06154e1044eced709.jpg","meta":"剧情 / 喜剧 / 爱情 / 蔡凡熙 / 何蓝逗 / 许光汉 / 王耀庆","rating":"2023-02-28 / ★★★★☆ 推荐","comment":""},{"title":"盛夏未来","alt":"https://movie.douban.com/subject/35158124/","image":"https://minio.mythsman.com/douban/d6fdbb2d3ea32814ad12c38a87f89c2c.jpg","meta":"剧情 / 沈洋 / 詹晨 / 沈洋 / 詹晨 / 张子枫 / 吴磊 / 郝蕾 / 祖峰 / 柳小海 / 刘丹 / 周铁 / 宋雨霏 / 姜来 / 仵晓迪 / 尹腾喆 / 金京 / 屈刚 / 马乐 / 茹天 / 2021-07-30(中国大陆)","rating":"2023-02-25 / ★★★★★ 力荐","comment":""},{"title":"扬名立万","alt":"https://movie.douban.com/subject/35422807/","image":"https://minio.mythsman.com/douban/6d867d5bc6b5de009422ad35167f222b.jpg","meta":"剧情 / 喜剧 / 悬疑 / 里八神 / 刘循子墨 / 张本煜 / 柯达 / 里八神 / 刘循子墨 / 张本煜 / 柯达 / 尹正 / 邓家佳 / 喻恩泰 / 杨皓宇 / 陈明昊 / 秦霄贤 / 张本煜 / 柯达 / 邓恩熙 / 余皑磊 / 白客 / 赵文瑄 / 小爱 / 周奇 / 2021-11-11(中国大陆)","rating":"2023-02-20 / ★★★★★ 力荐","comment":""},{"title":"门锁","alt":"https://movie.douban.com/subject/35073565/","image":"https://minio.mythsman.com/douban/57fbce60f1cf95eecc2016297987f1bd.jpg","meta":"剧情 / 惊悚 / 犯罪 / 陈珠珠 / 罗兆粦 / 别克 / 赵颢喆 / 陈珠珠 / 罗兆粦 / 别克 / 赵颢喆 / 白百何 / 白客 / 范丞丞 / 王紫璇 / 马浴柯 / 刘欢 / 刘頔 / 吕晓霖 / 沙宝亮 / 朱泳腾 / 杜若溪 / 郭佳伊 / 金車厘子 / 2021-11-19(中国大陆)","rating":"2023-02-20 / ★★★★★ 力荐","comment":""},{"title":"八佰","alt":"https://movie.douban.com/subject/26754233/","image":"https://minio.mythsman.com/douban/f3c27beda1938e615db8252572a546ff.jpg","meta":"剧情 / 历史 / 战争 / 管虎 / 葛瑞 / 管虎 / 葛瑞 / 王千源 / 张译 / 姜武 / 黄志忠 / 张俊一 / 欧豪 / 杜淳 / 魏晨 / 张宥浩 / 唐艺昕 / 李九霄 / 李晨 / 梁静 / 侯勇 / 辛柏青 / 俞灏明 / 刘晓庆 / 姚晨 / 郑恺 / 余皑磊 / 黄晓明 / 徐嘉雯 / 张承 / 马精武 / 胡晓光 / 陆思宇 / 白恩 / 曹璐 / 刘云龙 / 杨嘉华 / 中泉英雄 / 高爽 / 郑伟 / 高冬平 / 黄米依 / 曹卫宇 / 宋洋 / 徐乐同 / 徐幸 / 2020-08-21(中国大陆) / 2020-08-14(大规模点映)","rating":"2023-02-20 / ★★★★★ 力荐","comment":""},{"title":"一吻定情","alt":"https://movie.douban.com/subject/30263995/","image":"https://minio.mythsman.com/douban/9d4e803181f17db76855de092cc490e4.jpg","meta":"喜剧 / 爱情 / 曾咏婷 / 黄继柔 / 曾咏婷 / 黄继柔 / 王大陆 / 林允 / 陈柏融 / 蔡思韵 / 邰智源 / 李铭顺 / 钟丽缇 / 郭书瑶 / 2019-02-14(中国大陆/中国台湾)","rating":"2023-02-20 / ★★★☆☆ 还行","comment":""},{"title":"胡桃夹子和四个王国 The Nutcracker And The Four Realms","alt":"https://movie.douban.com/subject/26741061/","image":"https://minio.mythsman.com/douban/99d44d5ed82af9caea758bf3c9311bff.jpg","meta":"奇幻 / 冒险 / 阿什利·鲍威尔 / 汤姆·麦卡锡 / E·T·A·霍夫曼 / 阿什利·鲍威尔 / 汤姆·麦卡锡 / E·T·A·霍夫曼 / 麦肯吉·弗依 / 摩根·弗里曼 / 凯拉·奈特莉 / 马修·麦克费登 / 海伦·米伦 / 艾丽·巴姆博 / 米兰达·哈特 / 欧赫尼奥·德尔维斯 / 杰克·怀特霍尔 / 理查德·E·格兰特 / 谢尔盖·波卢宁 / 欧米德·吉亚李利 / 梅拉·沙尔 / 尼克·穆罕默德 / 杰茜·维宁 / 汤姆·斯威特 / 马里安·洛伦西克 / 芙洛·费拉科 / 丽塔-麦克唐纳丹帕 / 查尔斯·斯特里特 / 2018-11-02(中国大陆/美国)","rating":"2023-02-20 / ★★★☆☆ 还行","comment":""},{"title":"感动她77次 感動她77次","alt":"https://movie.douban.com/subject/30174091/","image":"https://minio.mythsman.com/douban/9b55ab2b7c5e1ddde0e174e78b19e010.jpg","meta":"喜剧 / 爱情 / 李敏 / 李敏 / 蔡卓妍 / 周柏豪 / 马里奥·毛瑞尔 / 惠英红 / 郑希怡 / 卫诗雅 / 郑诗君 / 纪焕博 / 卢巧音 / 雷琛瑜 / 陆永 / 林盛斌 / 小肥 / 2021-05-14(中国大陆)","rating":"2023-02-20 / ★★★★☆ 推荐","comment":""},{"title":"深海","alt":"https://movie.douban.com/subject/26649682/","image":"https://minio.mythsman.com/douban/f4f1c8be1deadceb8fffa6f47dd435bf.jpg","meta":"动画 / 奇幻 / 田晓鹏 / 田晓鹏 / 苏鑫 / 王亭文","rating":"2023-02-20 / ★★★★☆ 推荐","comment":""},{"title":"后宫·甄嬛传","alt":"https://movie.douban.com/subject/4922787/","image":"https://minio.mythsman.com/douban/b2afe8dcf08c2eb79c14752155ae5b1d.jpg","meta":"剧情 / 古装 / 流潋紫 / 王小平 / 流潋紫 / 王小平 / 孙俪 / 陈建斌 / 蔡少芬 / 李东学 / 蒋欣 / 陶昕然 / 斓曦 / 孙茜 / 张晓龙 / 刘雪华 / 李天柱 / 蓝盈莹 / 张雅萌 / 杨紫嫣 / 陈思斯 / 万美汐 / 热依扎 / 李宜娟 / 战菁一 / 唐艺昕 / 谭松韵 / 徐璐 / 毛晓彤 / 康福震 / 杨凯淳 / 刘钇彤 / 赵秦 / 王文杰 / 颖儿 / 郭萱 / 邬立朋 / 沈保平 / 梁艺馨 / 杨淇 / 何亚男 / 李佳璇 / 王一鸣","rating":"2023-02-20 / ★★★★☆ 推荐","comment":""},{"title":"武媚娘传奇","alt":"https://movie.douban.com/subject/6984046/","image":"https://minio.mythsman.com/douban/9e6434eb391024130f9001af442b6a48.jpg","meta":"传记 / 历史 / 古装 / 潘朴 / 胥悦 / 王妍蓓 / 李夏 / 杜临阳 / 李森祥 / 谭琛 / 穆晓光 / 潘朴 / 胥悦 / 王妍蓓 / 李夏 / 杜临阳 / 李森祥 / 谭琛 / 穆晓光 / 范冰冰 / 张丰毅 / 李治廷 / 周海媚 / 张馨予 / 张彤 / 张定涵 / 李解 / 王绘春 / 张庭 / 张钧甯 / 陈思斯 / 李李仁 / 李晨 / 俞灏明 / 康福震 / 王文杰 / 任山 / 涂黎曼 / 施诗 / 沈保平 / 孙佳奇 / 赵雍","rating":"2023-02-20 / ★★★★★ 力荐","comment":""},{"title":"前任攻略","alt":"https://movie.douban.com/subject/24751754/","image":"https://minio.mythsman.com/douban/3d5840c271bcb92e0317c6f55312ae23.jpg","meta":"喜剧 / 爱情 / 田羽生 / 史晨赟 / 刘伯翰 / 牛新瑶 / 田羽生 / 史晨赟 / 刘伯翰 / 牛新瑶 / 韩庚 / 姚星彤 / 郑恺 / 王丽坤 / 班嘉佳 / 张涵予 / 李相烨 / 关喆 / 毛俊杰 / 麦迪娜 / 熊乃瑾 / 柳岩 / 2014-01-31(中国大陆)","rating":"2023-02-20 / ★★★☆☆ 还行","comment":""},{"title":"下一任：前任","alt":"https://movie.douban.com/subject/26311974/","image":"https://minio.mythsman.com/douban/c16108657226ad45659048d2f607fd58.jpg","meta":"爱情 / 陈鸿仪 / 陈鸿仪 / 郭采洁 / 郑恺 / 李东学 / 谢依霖 / 刘心悠 / 邱欣怡 / 李荣浩 / 蓝心湄 / 林辰唏 / 林美秀 / 2019-05-01(中国大陆)","rating":"2023-02-20 / ★★☆☆☆ 较差","comment":""},{"title":"前任2：备胎反击战","alt":"https://movie.douban.com/subject/25881786/","image":"https://minio.mythsman.com/douban/3c5d398bf40fb198e14dcba409d476f3.jpg","meta":"喜剧 / 爱情 / 老史 / 西门 / 田羽生 / 大宽 / 老史 / 西门 / 田羽生 / 大宽 / 郑恺 / 郭采洁 / 王传君 / 张殿伦 / 张艺兴 / 2015-11-06(中国大陆)","rating":"2023-02-20 / ★★★★★ 力荐","comment":""},{"title":"前度","alt":"https://movie.douban.com/subject/4709904/","image":"https://minio.mythsman.com/douban/4c36693002c9bb6cb79fcb8dd95a3f0a.jpg","meta":"爱情 / 麦曦茵 / 麦曦茵 / 陈伟霆 / 钟欣潼 / 卫诗雅 / 曾国祥 / 周俊伟 / 向佐 / 杜汶泽 Chapman To / 2010-12-30(中国大陆) / 2010-06-10(中国香港)","rating":"2023-02-20 / ★★★★☆ 推荐","comment":""},{"title":"阿童木 Astro Boy","alt":"https://movie.douban.com/subject/1917074/","image":"https://minio.mythsman.com/douban/84d2f3fbe9ed270c73c72eb9adbe3205.jpg","meta":"动作 / 科幻 / 动画 / 家庭 / 蒂莫西·哈里斯 / 手冢治虫 / 蒂莫西·哈里斯 / 手冢治虫 / 弗莱迪·海默 / 克里斯汀·贝尔 / 尼古拉斯·凯奇 / 塞缪尔·杰克逊 / 查理兹·塞隆 / 比尔·奈伊 / 唐纳德·萨瑟兰 / 2009-10-23(中国大陆/美国) / 2009-10-08(中国香港) / 2009-10-05(日本)","rating":"2023-02-20 / ★★★★★ 力荐","comment":""},{"title":"哆啦A梦：伴我同行 STAND BY ME ドラえもん","alt":"https://movie.douban.com/subject/25769362/","image":"https://minio.mythsman.com/douban/a6792297839e6ebe86e2eac4944c9478.jpg","meta":"剧情 / 动画 / 山崎贵 / 藤子·F·不二雄 / 山崎贵 / 藤子·F·不二雄 / 水田山葵 / 大原惠美 / 嘉数由美 / 木村昴 / 关智一 / 三石琴乃 / 松本保典 / 田原阿尔诺 / 竹内都子 / 荻野志保子 / 高木涉 / 松本幸 / 佐藤美由希 / Lynn / 妻夫木聪 / 2015-05-28(中国大陆) / 2014-08-08(日本)","rating":"2023-02-20 / ★★★★★ 力荐","comment":""},{"title":"穿越火线","alt":"https://movie.douban.com/subject/30399268/","image":"https://minio.mythsman.com/douban/01e5de131d17f0e90034425bfec79ad5.jpg","meta":"剧情 / 奇幻 / 徐速 / 王潇涵 / 傅莉 / 徐速 / 王潇涵 / 傅莉 / 鹿晗 / 吴磊 / 代露娃 / 宋妍霏 / 刘帅良 / 朱俊麟 / 黄德毅 / 潘美烨 / 宋家腾 / 夏志远 / 杨凯程 / 张琛 / 刘扬 / 刘杰毅 / 张萌 / 邵兵 / 王锵","rating":"2023-02-20 / ★★★☆☆ 还行","comment":""},{"title":"庆余年 第一季","alt":"https://movie.douban.com/subject/25853071/","image":"https://minio.mythsman.com/douban/1cee5fa9e28fa3c9d0aac5a3bcfcd6c1.jpg","meta":"剧情 / 古装 / 王倦 / 猫腻 / 王倦 / 猫腻 / 张若昀 / 李沁 / 陈道明 / 吴刚 / 李小冉 / 袁泉 / 于荣光 / 辛芷蕾 / 李纯 / 宋轶 / 刘桦 / 田雨 / 王阳 / 于谨维 / 郭麒麟 / 高曙光 / 李强 / 于洋 / 海一天 / 肖战 / 佟梦实 / 刘端端 / 张昊唯 / 李俊贤 / 刘润南 / 韩玖诺 / 刘美彤 / 韩昊霖 / 崔志刚 / 贾景晖 / 代文雯 / 李子峰 / 崔鹏 / 杜玉明 / 赵柯 / 许还山 / 曹翠芬 / 李建义 / 郑毓芝 / 梁爱琪 / 李洪权 / 赫子铭 / 罗二羊 / 傅迦 / 赵振廷 / 董可飞 / 康杰 / 张恒瑞 / 郭家诺 / 常铖 / 于安 / 淮文 / 孙亦沐 / 王铮 / 邓童天 / 乔于庭 / 林静 / 于小鸣 / 姜洋 / 东靖川 / 阎鹤祥","rating":"2023-02-20 / ★★★★★ 力荐","comment":""},{"title":"满江红","alt":"https://movie.douban.com/subject/35766491/","image":"https://minio.mythsman.com/douban/cc2120d014a1ed1e943879a81ddc1f79.jpg","meta":"剧情 / 喜剧 / 悬疑 / 古装 / 陈宇 / 张艺谋 / 陈宇 / 张艺谋 / 沈腾 / 易烊千玺 / 雷佳音 / 岳云鹏 / 张译 / 潘斌龙 / 陈永胜 / 欧豪 / 张弛 / 王梓屹 / 黄炎 / 林博洋 / 飞凡 / 任思诺","rating":"2023-02-13 / ★★★★☆ 推荐","comment":"含腾量大，不过到满江红出来真的很震撼！"},{"title":"肖申克的救赎 The Shawshank Redemption","alt":"https://movie.douban.com/subject/1292052/","image":"https://minio.mythsman.com/douban/813b64e39275b6c22e134a69ed102b02.jpg","meta":"剧情 / 犯罪 / 弗兰克·德拉邦特 / 斯蒂芬·金 / 弗兰克·德拉邦特 / 斯蒂芬·金 / 蒂姆·罗宾斯 / 摩根·弗里曼 / 鲍勃·冈顿 / 威廉姆·赛德勒 / 克兰西·布朗 / 吉尔·贝罗斯 / 马克·罗斯顿 / 詹姆斯·惠特摩 / 杰弗里·德曼 / 拉里·布兰登伯格 / 尼尔·吉恩托利 / 布赖恩·利比 / 大卫·普罗瓦尔 / 约瑟夫·劳格诺 / 祖德·塞克利拉 / 保罗·麦克兰尼 / 芮妮·布莱恩 / 阿方索·弗里曼 / V·J·福斯特 / 弗兰克·梅德拉诺 / 马克·迈尔斯 / 尼尔·萨默斯 / 耐德·巴拉米 / 布赖恩·戴拉特 / 唐·麦克马纳斯 / 1994-09-10(多伦多电影节) / 1994-10-14(美国)","rating":"2023-02-09 / ★★★★★ 力荐","comment":""},{"title":"阿甘正传 Forrest Gump","alt":"https://movie.douban.com/subject/1292720/","image":"https://minio.mythsman.com/douban/1b427bdc7c9ddb28621be497c11c21b8.jpg","meta":"剧情 / 爱情 / 艾瑞克·罗斯 / 温斯顿·格鲁姆 / 艾瑞克·罗斯 / 温斯顿·格鲁姆 / 汤姆·汉克斯 / 罗宾·怀特 / 加里·西尼斯 / 麦凯尔泰·威廉逊 / 莎莉·菲尔德 / 海利·乔·奥斯蒙 / 迈克尔·康纳·亨弗里斯 / 哈罗德·G·赫瑟姆 / 山姆·安德森 / 伊俄涅·M·特雷奇 / 彼得·道博森 / 希博汗·法隆 / 伊丽莎白·汉克斯 / 汉娜·豪尔 / 克里斯托弗·琼斯 / 罗布·兰德里 / 杰森·麦克奎尔 / 桑尼·施罗耶 / 艾德·戴维斯 / 丹尼尔C.斯瑞派克 / 大卫·布里斯宾 / 德博拉·麦克蒂尔 / 艾尔·哈林顿 / 阿非莫·奥米拉 / 约翰·沃德斯塔德 / 迈克尔·伯吉斯 / 埃里克·安德伍德 / 拜伦·明斯 / 斯蒂芬·布吉格沃特 / 约翰·威廉·高尔特 / 希拉里·沙普兰 / 伊莎贝尔·罗斯 / 理查德·达历山德罗 / 迪克·史迪威 / 迈克尔-杰斯 / 杰弗里·布莱克 / 瓦妮莎·罗斯 / 迪克·卡维特 / 马拉·苏查雷特扎 / 乔·阿拉斯奇 / W·本森·泰瑞 / 1994-06-23(洛杉矶首映) / 1994-07-06(美国)","rating":"2023-02-09 / ★★★★★ 力荐","comment":""},{"title":"动物世界","alt":"https://movie.douban.com/subject/26925317/","image":"https://minio.mythsman.com/douban/827a0b74b6ce1def6f5091aa2949f264.jpg","meta":"剧情 / 动作 / 冒险 / 韩延 / 韩延 / 李易峰 / 迈克尔·道格拉斯 / 周冬雨 / 曹炳琨 / 王戈 / 苏可 / 2018-06-29(中国大陆)","rating":"2023-02-09 / ★★★★★ 力荐","comment":""},{"title":"我不是药神","alt":"https://movie.douban.com/subject/26752088/","image":"https://minio.mythsman.com/douban/0dd22adc7d01837fb120f71df3b916fa.jpg","meta":"剧情 / 喜剧 / 韩家女 / 钟伟 / 文牧野 / 韩家女 / 钟伟 / 文牧野 / 徐峥 / 王传君 / 周一围 / 谭卓 / 章宇 / 杨新鸣 / 王佳佳 / 王砚辉 / 贾晨飞 / 龚蓓苾 / 宁浩 / 李乃文 / 岳小军 / 苇青 / 富冠铭 / 巴拉特·巴蒂 / 喜利图 / 张海艳 / 朱耕佑 / 2018-07-05(中国大陆) / 2018-06-30(大规模点映)","rating":"2023-02-09 / ★★★★☆ 推荐","comment":""},{"title":"星际穿越 Interstellar","alt":"https://movie.douban.com/subject/1889243/","image":"https://minio.mythsman.com/douban/58e61460bc381e498cd9905d240fb1ff.jpg","meta":"剧情 / 科幻 / 冒险 / 乔纳森·诺兰 / 克里斯托弗·诺兰 / 乔纳森·诺兰 / 克里斯托弗·诺兰 / 马修·麦康纳 / 安妮·海瑟薇 / 杰西卡·查斯坦 / 麦肯吉·弗依 / 卡西·阿弗莱克 / 迈克尔·凯恩 / 马特·达蒙 / 提莫西·查拉梅 / 艾伦·伯斯汀 / 约翰·利思戈 / 韦斯·本特利 / 大卫·吉亚西 / 比尔·欧文 / 托弗·戈瑞斯 / 科莱特·沃夫 / 弗朗西斯·X.麦卡蒂 / 安德鲁·博尔巴 / 乔什·斯图沃特 / 莱雅·卡里恩斯 / 利亚姆·迪金森 / 杰夫·赫普内尔 / 伊莱耶斯·加贝尔 / 布鲁克·史密斯 / 大卫·奥伊罗 / 威廉姆·德瓦内 / 拉什·费加 / 格里芬·弗雷泽 / 弗洛拉·诺兰 / 2014-11-12(中国大陆) / 2020-08-02(中国大陆重映) / 2014-11-07(美国)","rating":"2023-02-09 / ★★★★★ 力荐","comment":""},{"title":"流浪地球","alt":"https://movie.douban.com/subject/26266893/","image":"https://minio.mythsman.com/douban/5b3c4783dc8ca575151182a0fbe4ffb5.jpg","meta":"科幻 / 冒险 / 灾难 / 龚格尔 / 严东旭 / 郭帆 / 叶俊策 / 杨治学 / 吴荑 / 叶濡畅 / 沈晶晶 / 刘慈欣 / 龚格尔 / 严东旭 / 郭帆 / 叶俊策 / 杨治学 / 吴荑 / 叶濡畅 / 沈晶晶 / 刘慈欣 / 吴京 / 屈楚萧 / 李光洁 / 吴孟达 / 赵今麦 / 隋凯 / 屈菁菁 / 张亦驰 / 杨皓宇 / 阿尔卡基·沙罗格拉茨基 / 李虹辰 / 杨轶 / 姜志刚 / 张欢 / 雷佳音 / 宁浩 / 刘慈欣 / 郭京飞 / 王智 / 张子贤 / 路阳 / 张宁 / 张小北 / 饶晓志 / 陶珞依 / 吴晓亮 / 龚格尔 / 郭帆 / 2019-02-05(中国大陆) / 2020-11-26(中国大陆重映)","rating":"2023-02-09 / ★★★☆☆ 还行","comment":""},{"title":"哪吒之魔童降世","alt":"https://movie.douban.com/subject/26794435/","image":"https://minio.mythsman.com/douban/07c5350d27bc972e28324cc83b5e8031.jpg","meta":"剧情 / 喜剧 / 动画 / 奇幻 / 饺子 / 易巧 / 魏芸芸 / 饺子 / 易巧 / 魏芸芸 / 吕艳婷 / 囧森瑟夫 / 瀚墨 / 陈浩 / 绿绮 / 张珈铭 / 杨卫 / 2019-07-26(中国大陆) / 2019-07-13(大规模点映)","rating":"2023-02-09 / ★★★★★ 力荐","comment":""},{"title":"艺伎回忆录 Memoirs of a Geisha","alt":"https://movie.douban.com/subject/1309059/","image":"https://minio.mythsman.com/douban/fb72eaa41b34874bc57e572aa7c514b7.jpg","meta":"剧情 / 爱情 / 罗宾·史威考德 / 亚瑟·高登 / 罗宾·史威考德 / 亚瑟·高登 / 章子怡 / 渡边谦 / 杨紫琼 / 巩俐 / 周采芹 / 大后寿寿花 / 桃井薰 / 役所广司 / 伊川东吾 / 工藤夕贵 / 田川洋行 / 2005-12-10(日本)","rating":"2023-02-09 / ★★★★★ 力荐","comment":""},{"title":"还是觉得你最好 / 飯戲攻心","alt":"https://movie.douban.com/subject/35503125/","image":"https://minio.mythsman.com/douban/e2e3d985b3d4634458dd9ca028e15143.jpg","meta":"","rating":"2023-02-09 / ★★★★★ 力荐","comment":""},{"title":"新神榜：杨戬","alt":"https://movie.douban.com/subject/35360684/","image":"https://minio.mythsman.com/douban/91973f5ff0bd763ccda91bf44f7013e2.jpg","meta":"动作 / 动画 / 奇幻 / 冒险 / 王微 / 王微 / 王凯 / 季冠霖 / 李立宏 / 李兰陵 / 赵毅 / 刘校妤 / 文靖渊 / 汤水雨 / 星潮 / 邱秋 / 杨天翔 / 孟宇 / 杨默 / 赵铭洲 / 李楠 / 林强 / 刘琮 / 锦鲤 / 沈良骏 / 赵霁 / 胡亚捷 / 韩乐 / 2022-08-19(中国大陆)","rating":"2023-02-09 / ★★★☆☆ 还行","comment":""},{"title":"机器人总动员 WALL·E","alt":"https://movie.douban.com/subject/2131459/","image":"https://minio.mythsman.com/douban/11bcf6c634d9e8c0f9db28673c583162.jpg","meta":"科幻 / 动画 / 冒险 / 安德鲁·斯坦顿 / 吉姆·里尔顿 / 彼特·道格特 / 安德鲁·斯坦顿 / 吉姆·里尔顿 / 彼特·道格特 / 本·贝尔特 / 艾丽莎·奈特 / 杰夫·格尔林 / 佛莱德·威拉特 / 西格妮·韦弗 / MacInTalk / 约翰·拉岑贝格 / 凯茜·纳基麦 / 泰迪·牛顿 / 鲍伯·伯根 / 洛丽·理查德森 / 吉姆·瓦德 / 彼特·道格特 / 安德鲁·斯坦顿 / 杰夫·皮金 / 约翰·齐甘 / 米凯·麦高万 / 雪莉·琳恩 / 克莱特·惠特克 / 唐纳德·富利洛夫 / 罗里·艾伦 / 杰斯·哈梅尔 / 拉瑞恩·纽曼 / 扬·拉布森 / 保罗·伊丁 / 2008-06-27(美国)","rating":"2023-02-09 / ★★★☆☆ 还行","comment":""},{"title":"末代皇帝 The Last Emperor","alt":"https://movie.douban.com/subject/1293172/","image":"https://minio.mythsman.com/douban/0d245bb200bf5f86d9f9cebac22f71ec.jpg","meta":"剧情 / 传记 / 历史 / 贝纳尔多·贝托鲁奇 / 马克·派普罗 / 贝纳尔多·贝托鲁奇 / 马克·派普罗 / 尊龙 / 陈冲 / 邬君梅 / 彼得·奥图尔 / 英若诚 / 吴涛 / 黄自强 / 丹尼斯·邓 / 坂本龙一 / 马吉·汉 / 里克·扬 / 田川洋行 / 苟杰德 / 理查德·吴 / 皱缇格 / 陈凯歌 / 卢燕 / 区亨利 / 陈述 / 鲍皓昕 / 黄文捷 / 邵茹贞 / 亨利·基 / 张良斌 / 梁冬 / 康斯坦丁·格雷戈里 / 黄汉琪 / 王涛 / 宋怀桂 / 蔡鸿翔 / 程淑艳 / 张天民 / 1987-10-04(东京国际电影节) / 1987-10-23(意大利)","rating":"2023-02-09 / ★★★★☆ 推荐","comment":""},{"title":"寻梦环游记 Coco","alt":"https://movie.douban.com/subject/20495023/","image":"https://minio.mythsman.com/douban/440bf0f1d5458d93f1fc959fb052d1e5.jpg","meta":"喜剧 / 动画 / 音乐 / 奇幻 / 阿德里安·莫利纳 / 马修·奥尔德里奇 / 李·昂克里奇 / 詹森·卡茨 / 阿德里安·莫利纳 / 马修·奥尔德里奇 / 李·昂克里奇 / 詹森·卡茨 / 安东尼·冈萨雷斯 / 盖尔·加西亚·贝纳尔 / 本杰明·布拉特 / 阿兰娜·乌巴赫 / 芮妮·维克托 / 杰米·卡米尔 / 阿方索·阿雷奥 / 赫伯特·西古恩萨 / 加布里埃尔·伊格莱西亚斯 / 隆巴多·博伊尔 / 安娜·奥菲丽亚·莫吉亚 / 娜塔丽·科尔多瓦 / 赛琳娜·露娜 / 爱德华·詹姆斯·奥莫斯 / 索菲亚·伊斯皮诺萨 / 卡拉·梅迪纳 / 黛娅娜·欧特里 / 路易斯·瓦尔德斯 / 布兰卡·阿拉切利 / 萨尔瓦多·雷耶斯 / 切奇·马林 / 奥克塔维·索利斯 / 约翰·拉岑贝格 / 2017-11-24(中国大陆) / 2020-07-20(中国大陆重映) / 2017-11-22(美国)","rating":"2023-02-09 / ★★★★☆ 推荐","comment":""},{"title":"素媛 소원","alt":"https://movie.douban.com/subject/21937452/","image":"https://minio.mythsman.com/douban/7ccebda5310e147fe76e385c68f1cff2.jpg","meta":"剧情 / 金智慧 / 曹重勋 / 金成旭 / 金智慧 / 曹重勋 / 金成旭 / 薛景求 / 严志媛 / 李来 / 金海淑 / 金相浩 / 罗美兰 / 杨真诚 / 权泰元 / 2013-10-02(韩国)","rating":"2023-02-09 / ★★★★★ 力荐","comment":""},{"title":"钢铁侠 Iron Man","alt":"https://movie.douban.com/subject/1432146/","image":"https://minio.mythsman.com/douban/4e235ec86ac68f4fd2160714f0ebbaa0.jpg","meta":"动作 / 科幻 / 惊悚 / 冒险 / 阿特·马库姆 / 马特·霍洛维 / 马克·弗格斯 / 霍克·奥斯比 / 阿特·马库姆 / 马特·霍洛维 / 马克·弗格斯 / 霍克·奥斯比 / 小罗伯特·唐尼 / 泰伦斯·霍华德 / 格温妮斯·帕特洛 / 杰夫·布里吉斯 / 莱丝莉·比伯 / 肖恩·托布 / 保罗·贝坦尼 / 乔恩·费儒 / 克拉克·格雷格 / 2008-04-30(中国大陆) / 2008-04-14(悉尼首映) / 2008-05-02(美国)","rating":"2023-02-09 / ★★★★★ 力荐","comment":""},{"title":"钢铁侠2 Iron Man 2","alt":"https://movie.douban.com/subject/3066739/","image":"https://minio.mythsman.com/douban/a880c48fe61a84dd133c1ed75cdfbdea.jpg","meta":"动作 / 科幻 / 冒险 / 贾斯汀·塞洛克斯 / 贾斯汀·塞洛克斯 / 小罗伯特·唐尼 / 格温妮斯·帕特洛 / 米基·洛克 / 斯嘉丽·约翰逊 / 山姆·洛克威尔 / 唐·钱德尔 / 塞缪尔·杰克逊 / 乔恩·费儒 / 保罗·贝坦尼 / 克拉克·格雷格 / 凯特·玛拉 / 约翰·斯拉特里 / 2010-05-07(中国大陆/美国)","rating":"2023-02-09 / ★★★★★ 力荐","comment":""},{"title":"钢铁侠3 Iron Man 3","alt":"https://movie.douban.com/subject/3231742/","image":"https://minio.mythsman.com/douban/2a1290a29c300571120c432d59204254.jpg","meta":"动作 / 科幻 / 沙恩·布莱克 / 德鲁·皮尔斯 / 斯坦·李 / 唐·赫克 / 拉里·利伯 / 杰克·科比 / 沙恩·布莱克 / 德鲁·皮尔斯 / 斯坦·李 / 唐·赫克 / 拉里·利伯 / 杰克·科比 / 小罗伯特·唐尼 / 盖·皮尔斯 / 格温妮斯·帕特洛 / 本·金斯利 / 唐·钱德尔 / 保罗·贝坦尼 / 丽贝卡·豪尔 / 乔恩·费儒 / 泰·辛普金斯 / 威廉姆·赛德勒 / 詹姆斯·戴尔 / 伊芳·齐玛 / 阿什利·汉弥尔顿 / 王学圻 / 范冰冰 / 2013-05-01(中国大陆) / 2013-04-18(伦敦首映) / 2013-05-03(美国)","rating":"2023-02-09 / ★★★☆☆ 还行","comment":""},{"title":"无敌浩克 The Incredible Hulk","alt":"https://movie.douban.com/subject/1866475/","image":"https://minio.mythsman.com/douban/39ad2bbfdbf49634827f88e233cbfd69.jpg","meta":"动作 / 科幻 / 惊悚 / 扎克·佩恩 / 扎克·佩恩 / 爱德华·诺顿 / 丽芙·泰勒 / 蒂姆·罗斯 / 威廉·赫特 / 蒂姆·布雷克·尼尔森 / 2008-08-20(中国大陆) / 2008-06-13(美国)","rating":"2023-02-09 / ★★★★★ 力荐","comment":""},{"title":"雷神 Thor","alt":"https://movie.douban.com/subject/1866471/","image":"https://minio.mythsman.com/douban/c957bbeb4983c447f0717021684e6b6b.jpg","meta":"动作 / 奇幻 / 冒险 / 阿什利·米勒 / 扎克·施坦茨 / 唐·佩恩 / J·迈克尔·斯特拉辛斯基 / 马克·波托塞维奇 / 斯坦·李 / 拉里·利伯 / 杰克·科比 / 阿什利·米勒 / 扎克·施坦茨 / 唐·佩恩 / J·迈克尔·斯特拉辛斯基 / 马克·波托塞维奇 / 斯坦·李 / 拉里·利伯 / 杰克·科比 / 克里斯·海姆斯沃斯 / 娜塔莉·波特曼 / 汤姆·希德勒斯顿 / 安东尼·霍普金斯 / 斯特兰·斯卡斯加德 / 凯特·戴琳斯 / 克拉克·格雷格 / 科鲁姆·费奥瑞 / 伊德里斯·艾尔巴 / 雷·史蒂文森 / 浅野忠信 / 乔希·达拉斯 / 杰米·亚历山大 / 蕾妮·罗素 / 艾德里安娜·巴拉扎 / 马克斯米利亚诺·赫尔南德斯 / 杰瑞米·雷纳 / 塞缪尔·杰克逊 / 达科塔·高尤 / 泰德·沃普莱斯 / 斯坦·李 / 2011-05-08(中国大陆) / 2011-05-06(美国)","rating":"2023-02-09","comment":""},{"title":"美国队长 Captain America: The First Avenger","alt":"https://movie.douban.com/subject/2138838/","image":"https://minio.mythsman.com/douban/fd2049b269cff6f69131d08d78c6937c.jpg","meta":"动作 / 科幻 / 冒险 / 克里斯托弗·马库斯 / 斯蒂芬·麦克菲利 / 乔·西蒙 / 杰克·科比 / 克里斯托弗·马库斯 / 斯蒂芬·麦克菲利 / 乔·西蒙 / 杰克·科比 / 克里斯·埃文斯 / 海莉·阿特维尔 / 塞巴斯蒂安·斯坦 / 汤米·李·琼斯 / 雨果·维文 / 多米尼克·库珀 / 理查德·阿米蒂奇 / 斯坦利·图齐 / 塞缪尔·杰克逊 / 托比·琼斯 / 尼尔·麦克唐纳 / 德里克·卢克 / 肯尼斯·崔 / 约翰·约瑟夫·菲尔德 / 娜塔莉·多默尔 / 2011-09-09(中国大陆) / 2011-07-19(加州首映) / 2011-07-22(美国)","rating":"2023-02-09 / ★★★☆☆ 还行","comment":""},{"title":"复仇者联盟 The Avengers","alt":"https://movie.douban.com/subject/1866479/","image":"https://minio.mythsman.com/douban/ac2b4aac1d8569095c0939683a480448.jpg","meta":"动作 / 科幻 / 奇幻 / 冒险 / 乔斯·韦登 / 扎克·佩恩 / 乔斯·韦登 / 扎克·佩恩 / 小罗伯特·唐尼 / 克里斯·埃文斯 / 斯嘉丽·约翰逊 / 克里斯·海姆斯沃斯 / 杰瑞米·雷纳 / 马克·鲁弗洛 / 塞缪尔·杰克逊 / 汤姆·希德勒斯顿 / 斯特兰·斯卡斯加德 / 寇碧·史莫德斯 / 克拉克·格雷格 / 保罗·贝坦尼 / 格温妮斯·帕特洛 / 2012-05-05(中国大陆) / 2012-05-04(美国)","rating":"2023-02-09","comment":""},{"title":"复仇者联盟2：奥创纪元 Avengers: Age of Ultron","alt":"https://movie.douban.com/subject/10741834/","image":"https://minio.mythsman.com/douban/8ab68131aa8bee18e1e69ef51c0492b7.jpg","meta":"动作 / 科幻 / 奇幻 / 冒险 / 乔斯·韦登 / 斯坦·李 / 杰克·科比 / 乔斯·韦登 / 斯坦·李 / 杰克·科比 / 小罗伯特·唐尼 / 克里斯·海姆斯沃斯 / 马克·鲁弗洛 / 克里斯·埃文斯 / 斯嘉丽·约翰逊 / 杰瑞米·雷纳 / 詹姆斯·斯派德 / 塞缪尔·杰克逊 / 唐·钱德尔 / 亚伦·泰勒-约翰逊 / 伊丽莎白·奥尔森 / 保罗·贝坦尼 / 寇碧·史莫德斯 / 安东尼·麦凯 / 海莉·阿特维尔 / 伊德里斯·艾尔巴 / 斯特兰·斯卡斯加德 / 金秀贤 / 托马斯·克莱舒曼 / 安迪·瑟金斯 / 朱莉·德尔佩 / 斯坦·李 / 亨利·古德曼 / 多米尼克·普罗沃斯特-切克利 / 艾萨克·安德鲁斯 / 2015-05-12(中国大陆) / 2015-05-01(美国)","rating":"2023-02-09","comment":""},{"title":"蚁人 Ant-Man","alt":"https://movie.douban.com/subject/1866473/","image":"https://minio.mythsman.com/douban/01d859b214f660ee185842178b364477.jpg","meta":"动作 / 科幻 / 冒险 / 斯坦·李 / 杰克·科比 / 拉里·利伯 / 埃德加·赖特 / 乔·考尼什 / 亚当·麦凯 / 保罗·路德 / 斯坦·李 / 杰克·科比 / 拉里·利伯 / 埃德加·赖特 / 乔·考尼什 / 亚当·麦凯 / 保罗·路德 / 保罗·路德 / 迈克尔·道格拉斯 / 伊万杰琳·莉莉 / 寇瑞·斯托尔 / 迈克尔·佩纳 / 大卫·达斯马齐连 / 朱迪·格雷尔 / 鲍比·坎纳瓦尔 / 约翰·斯拉特里 / 伍德·哈里斯 / T.I. / 海莉·阿特维尔 / 瓦内萨·罗斯 / 马丁·唐文 / 乔·克里斯特 / 艾比·莱德·弗特森 / 安东尼·麦凯 / 加勒特·莫里斯 / 尼尔·汉博格 / 鲁德·哈利特 / 斯坦·李 / 克里斯·埃文斯 / 塞巴斯蒂安·斯坦 / 2015-10-16(中国大陆) / 2015-07-17(美国)","rating":"2023-02-09","comment":""},{"title":"奇异博士 Doctor Strange","alt":"https://movie.douban.com/subject/3025375/","image":"https://minio.mythsman.com/douban/fe71424112680790a0841781d0b41024.jpg","meta":"动作 / 奇幻 / 冒险 / 史蒂夫·迪特寇 / 托马斯·迪恩·唐纳利 / 斯坦·李 / 乔·斯派茨 / 约书亚·奥本海默 / 史蒂夫·迪特寇 / 托马斯·迪恩·唐纳利 / 斯坦·李 / 乔·斯派茨 / 约书亚·奥本海默 / 本尼迪克特·康伯巴奇 / 蒂尔达·斯文顿 / 麦斯·米科尔森 / 切瓦特·埃加福 / 瑞秋·麦克亚当斯 / 迈克尔·斯图巴 / 本尼迪克特·黄 / 本杰明·布拉特 / 斯科特·阿金斯 / 莎拉·费希恩 / 阿拉·萨菲 / 2016-11-04(中国大陆/美国) / 2016-10-25(英国)","rating":"2023-02-09","comment":""},{"title":"黑豹 Black Panther","alt":"https://movie.douban.com/subject/6390825/","image":"https://minio.mythsman.com/douban/5af3df9a83304af4fbf7c374dce09237.jpg","meta":"动作 / 科幻 / 冒险 / 瑞恩·库格勒 / 乔·罗伯特·科尔 / 斯坦·李 / 杰克·科比 / 瑞恩·库格勒 / 乔·罗伯特·科尔 / 斯坦·李 / 杰克·科比 / 查德维克·博斯曼 / 露皮塔·尼永奥 / 迈克尔·B·乔丹 / 丹娜·奎里拉 / 马丁·弗瑞曼 / 丹尼尔·卡卢亚 / 利蒂希娅·赖特 / 温斯顿·杜克 / 斯特林·K·布朗 / 安吉拉·贝塞特 / 福里斯特·惠特克 / 安迪·瑟金斯 / 弗洛伦丝·卡松巴 / 约翰·卡尼 / 大卫·S·李 / 娜比娅·毕 / 2018-03-09(中国大陆) / 2018-02-16(美国)","rating":"2023-02-09","comment":""},{"title":"复仇者联盟3：无限战争 Avengers: Infinity War","alt":"https://movie.douban.com/subject/24773958/","image":"https://minio.mythsman.com/douban/53242c8a101571fa0c83b59130c957d1.jpg","meta":"动作 / 科幻 / 奇幻 / 冒险 / 杰克·科比 / 克里斯托弗·马库斯 / 斯蒂芬·麦克菲利 / 吉姆·斯特林 / 杰克·科比 / 克里斯托弗·马库斯 / 斯蒂芬·麦克菲利 / 吉姆·斯特林 / 小罗伯特·唐尼 / 克里斯·海姆斯沃斯 / 克里斯·埃文斯 / 马克·鲁弗洛 / 乔什·布洛林 / 佐伊·索尔达娜 / 本尼迪克特·康伯巴奇 / 克里斯·帕拉特 / 汤姆·赫兰德 / 伊丽莎白·奥尔森 / 保罗·贝坦尼 / 斯嘉丽·约翰逊 / 查德维克·博斯曼 / 塞巴斯蒂安·斯坦 / 唐·钱德尔 / 汤姆·希德勒斯顿 / 安东尼·麦凯 / 本尼迪克特·黄 / 戴夫·巴蒂斯塔 / 布莱德利·库珀 / 范·迪塞尔 / 凯伦·吉兰 / 利蒂希娅·赖特 / 庞·克莱门捷夫 / 凯莉·库恩 / 汤姆-沃恩-劳勒 / 海登·瓦尔希 / 迈克尔·詹姆斯·肖 / 泰瑞·诺塔里 / 本尼西奥·德尔·托罗 / 彼特·丁拉基 / 罗斯·马昆德 / 丹娜·奎里拉 / 温斯顿·杜克 / 弗洛伦丝·卡松巴 / 塞缪尔·杰克逊 / 雅各布·巴特朗 / 斯坦·李 / 2018-05-11(中国大陆) / 2018-04-23(加州首映) / 2018-04-27(美国)","rating":"2023-02-09","comment":""},{"title":"惊奇队长 Captain Marvel","alt":"https://movie.douban.com/subject/26213252/","image":"https://minio.mythsman.com/douban/e2c84887026b35fbdd6c49b540656942.jpg","meta":"动作 / 科幻 / 冒险 / 安娜·波顿 / 瑞安·弗雷克 / 吉内瓦·德沃莱特-罗宾森 / 尼科尔·帕尔曼 / 梅格·勒福夫 / 安娜·波顿 / 瑞安·弗雷克 / 吉内瓦·德沃莱特-罗宾森 / 尼科尔·帕尔曼 / 梅格·勒福夫 / 布丽·拉尔森 / 裘德·洛 / 塞缪尔·杰克逊 / 本·门德尔森 / 安妮特·贝宁 / 麦肯娜·格瑞丝 / 克拉克·格雷格 / 嘉玛·陈 / 李·佩斯 / 杰曼·翰苏 / 拉什纳·林奇 / 阿基拉·阿克巴 / 科林·福特 / 卓库·莫度 / 肯内特·米歇尔 / 罗伯特·卡辛斯基 / 詹姆斯·莫里森 / 皮特·普劳泽克 / 马修·马希尔 / 安东尼·莫利纳利 / 马修·弗林·贝罗斯 / 加斯顿·达尔莫 / 亚当·哈特 / 马克·多尔蒂 / 雷尼尔·鲁菲诺 / 约翰·盖蒂尔 / 斯坦·李 / 克里斯·埃文斯 / 斯嘉丽·约翰逊 / 马克·鲁弗洛 / 唐·钱德尔 / 2019-03-08(美国/中国大陆)","rating":"2023-02-09","comment":""},{"title":"复仇者联盟4：终局之战 Avengers: Endgame","alt":"https://movie.douban.com/subject/26100958/","image":"https://minio.mythsman.com/douban/b41c13324c70aa8a756948e767687c00.jpg","meta":"剧情 / 动作 / 科幻 / 奇幻 / 冒险 / 克里斯托弗·马库斯 / 斯蒂芬·麦克菲利 / 斯坦·李 / 杰克·科比 / 吉姆·斯特林 / 克里斯托弗·马库斯 / 斯蒂芬·麦克菲利 / 斯坦·李 / 杰克·科比 / 吉姆·斯特林 / 小罗伯特·唐尼 / 克里斯·埃文斯 / 马克·鲁弗洛 / 克里斯·海姆斯沃斯 / 乔什·布洛林 / 保罗·路德 / 凯伦·吉兰 / 杰瑞米·雷纳 / 斯嘉丽·约翰逊 / 唐·钱德尔 / 布丽·拉尔森 / 布莱德利·库珀 / 泰莎·汤普森 / 汤姆·赫兰德 / 伊丽莎白·奥尔森 / 本尼迪克特·康伯巴奇 / 蒂尔达·斯文顿 / 格温妮斯·帕特洛 / 蕾妮·罗素 / 约翰·斯拉特里 / 查德维克·博斯曼 / 安东尼·麦凯 / 塞巴斯蒂安·斯坦 / 克里斯·帕拉特 / 汤姆·希德勒斯顿 / 佐伊·索尔达娜 / 丹娜·奎里拉 / 本尼迪克特·黄 / 庞·克莱门捷夫 / 戴夫·巴蒂斯塔 / 利蒂希娅·赖特 / 伊万杰琳·莉莉 / 乔恩·费儒 / 海莉·阿特维尔 / 娜塔莉·波特曼 / 玛丽莎·托梅 / 塔伊加·维迪提 / 安吉拉·贝塞特 / 迈克尔·道格拉斯 / 米歇尔·菲佛 / 威廉·赫特 / 寇碧·史莫德斯 / 肖恩·古恩 / 温斯顿·杜克 / 琳达·卡德里尼 / 马克斯米利亚诺·赫尔南德斯 / 弗兰克·格里罗 / 真田广之 / 汤姆-沃恩-劳勒 / 詹姆斯·达西 / 雅各布·巴特朗 / 范·迪塞尔 / 罗伯特·雷德福 / 塞缪尔·杰克逊 / 伊薇特·尼科尔·布朗 / 卡梅伦·布鲁姆布罗 / 蒂莫西·卡尔 / 凯瑞·康顿 / 迈克尔·A·库克 / 凯莉·库恩 / 艾玛·福尔曼 / 雷纳·加拉赫 / 丹妮拉·加斯基 / 郑肯 / 小弗洛伊德·安东尼·约翰 / 斯坦·李 / 罗斯·马昆德 / 布伦特·麦吉 / 迈克尔·皮耶里诺·米勒 / 卡兰·马尔韦 / 泰瑞·诺塔里 / 吉米·雷·皮肯斯 / 迈克尔·詹姆斯·肖 / 泰·辛普金斯 / 格雷格·蒂芬 / 2019-04-24(中国大陆) / 2019-04-26(美国)","rating":"2023-02-09","comment":""},{"title":"流浪地球2","alt":"https://movie.douban.com/subject/35267208/","image":"https://minio.mythsman.com/douban/7d34fbbd31f8dc845a4888a75cba402c.jpg","meta":"科幻 / 冒险 / 灾难 / 杨治学 / 龚格尔 / 郭帆 / 叶濡畅 / 杨治学 / 龚格尔 / 郭帆 / 叶濡畅 / 吴京 / 刘德华 / 李雪健 / 沙溢 / 宁理 / 王智 / 朱颜曼滋 / 安地 / 王若熹 / 佟丽娅 / 伟大力 / 张衣 / 天使 / 克拉拉 / 叶展飞 / 倪腾 / 胡先煦 / 霍青 / 刘寅 / 国义骞 / 吴恩璇 / 王红卫 / 孔大山 / 徐建 / 刘佳沄 / 丁燕来 / 郜昂 / 严华 / 李仁 / 洪真 / 王磊 / 王一通 / 杨洪涛 / 赵叶索 / 李路琦 / 黄纪渊 / 郑楚一 / 吴静一 / 付嘉灏 / 瓦伦廷·沃罗布耶夫 / 李一冉 / 周强 / 朱超艺 / 何金和龙 / 何金和金 / 张涛 / 向进 / 李沛东 / 2023-01-22(中国大陆)","rating":"2023-02-07 / ★★★★★ 力荐","comment":"满分炸裂！"},{"title":"狂飙","alt":"https://movie.douban.com/subject/35465232/","image":"https://minio.mythsman.com/douban/c866507c91b161e5ff9d5c82f7a53896.jpg","meta":"剧情 / 犯罪 / 朱俊懿 / 徐纪周 / 朱俊懿 / 徐纪周 / 张译 / 张颂文 / 李一桐 / 张志坚 / 吴刚 / 倪大红 / 韩童生 / 李建义 / 石兆琪 / 李健 / 高叶 / 王骁 / 令卓 / 岳阳","rating":"2023-02-07 / ★★★★★ 力荐","comment":"咖啡不用冲 迟早会成功 读孙子兵法 品启强人生！"},{"title":"前任3：再见前任","alt":"https://movie.douban.com/subject/26662193/","image":"https://minio.mythsman.com/douban/530118af91885d8556891818833a2b6d.jpg","meta":"喜剧 / 爱情 / 田羽生 / 常佳 / 大宽 / 大广 / 田羽生 / 常佳 / 大宽 / 大广 / 韩庚 / 郑恺 / 于文文 / 曾梦雪 / 罗米 / 2017-12-29(中国大陆)","rating":"2023-02-07 / ★★★★★ 力荐","comment":"无数次刷前任三了.."},{"title":"中国机长","alt":"https://movie.douban.com/subject/30295905/","image":"https://minio.mythsman.com/douban/7ffca7cb0bdf89e2f33e9f2f74988274.jpg","meta":"剧情 / 传记 / 灾难 / 于勇敢 / 于勇敢 / 张涵予 / 欧豪 / 杜江 / 袁泉 / 张天爱 / 李沁 / 雅玫 / 杨祺如 / 高戈 / 黄志忠 / 朱亚文 / 李现 / 焦俊艳 / 吴樾 / 阚清子 / 李岷城 / 冯文娟 / 陈数 / 杨颖 / 余皑磊 / 关晓彤 / 小爱 / 伊拉尔·帕萨 / 亚历克斯·皮希汀 / 赵亮 / 周波 / 2019-09-30(中国大陆) / 2021-12-01(中国大陆重映)","rating":"2023-02-07","comment":""},{"title":"中国医生","alt":"https://movie.douban.com/subject/35087699/","image":"https://minio.mythsman.com/douban/6d2718fcdb33dad5c1754887a5a71771.jpg","meta":"剧情 / 灾难 / 于勇敢 / 于勇敢 / 张涵予 / 袁泉 / 朱亚文 / 李晨 / 易烊千玺 / 欧豪 / 周也 / 冯文娟 / 耿乐 / 梁大维 / 小爱 / 雅玫 / 杨祺如 / 叶禾 / 蒋林燕 / 梅婷 / 李沁 / 张天爱 / 宋佳 / 俞飞鸿 / 倪虹洁 / 冯绍峰 / 周笔畅 / 张颂文 / 张子枫 / 佟丽娅 / 谷嘉诚 / 刘威 / 刘佳 / 赵宁宇 / 王挺 / 余皑磊 / 黄璐 / 印小天 / 张嘉倪 / 释小龙 / 高戈 / 刘琳 / 来喜 / 万国鹏 / 王昭 / 石昊正 / 2021-07-09(中国大陆)","rating":"2023-02-07","comment":""},{"title":"银河补习班","alt":"https://movie.douban.com/subject/30282387/","image":"https://minio.mythsman.com/douban/dfcd18d5086eed42e95d13ef70638ad4.jpg","meta":"剧情 / 俞白眉 / 俞白眉 / 邓超 / 白宇 / 任素汐 / 王西 / 孙浠伦 / 李建义 / 梁超 / 邵兵 / 王戈 / 吴亚衡 / 魏尊 / 冯泽昂 / 吴京 / 2019-07-18(中国大陆) / 2019-07-13(大规模点映)","rating":"2023-02-07","comment":""},{"title":"你的婚礼","alt":"https://movie.douban.com/subject/34973399/","image":"https://minio.mythsman.com/douban/7cadf08ed8ed6216779a52cf4df8bf77.jpg","meta":"爱情 / 张影 / 焦婷婷 / 韩天 / 张影 / 焦婷婷 / 韩天 / 许光汉 / 章若楠 / 丁冠森 / 晏紫东 / 郭丞 / 王莎莎 / 梁靖康 / 刘迅 / 2021-04-30(中国大陆)","rating":"2023-02-07","comment":""},{"title":"我和我的家乡","alt":"https://movie.douban.com/subject/35051512/","image":"https://minio.mythsman.com/douban/badf254bf9c0c2653204f6ceb55e5dc4.jpg","meta":"剧情 / 喜剧 / 刘吾驷 / 王昂 / 何玥妮 / 俞白眉 / 邢文雄 / 何可可 / 刘吾驷 / 王昂 / 何玥妮 / 俞白眉 / 邢文雄 / 何可可 / 葛优 / 黄渤 / 范伟 / 邓超 / 沈腾 / 张占义 / 王宝强 / 徐峥 / 闫妮 / 马丽 / 刘敏涛 / 刘昊然 / 卢靖姗 / 王子文 / 魏翔 / 章宇 / 王砚辉 / 张译 / 王源 / 张一鸣 / 杨新鸣 / 王迅 / 于和伟 / 苗阜 / 李嘉琦 / 张子贤 / 董子健 / 陶虹 / 吴京 / 韩彦博 / 吕行 / 佟丽娅 / 李晨 / 孙俪 / 赵铁人 / 郝云 / 彭昱畅 / 杨紫 / 岳云鹏 / 赵海燕 / 岳小军 / 王俊凯 / 贾玲 / 潘斌龙 / 高睿菲儿 / 陈数 / 代乐乐 / 黄才伦 / 雷佳音 / 梁超 / 孙贵权 / 韩昊霖 / 岳红 / 陶亮 / 李易峰 / 许猛 / 郭帆 / 卫莱 / 栗坤 / 薇娅 / 李佳琦 / 白泽泽 / 2020-10-01(中国大陆)","rating":"2023-02-07","comment":""},{"title":"独行月球","alt":"https://movie.douban.com/subject/35183042/","image":"https://minio.mythsman.com/douban/583b89f6eef9444e6caa3087ed2de433.jpg","meta":"喜剧 / 科幻 / 张吃鱼 / 钱晨光 / 戴思奥 / 沈雨悦 / 张吃鱼 / 钱晨光 / 戴思奥 / 沈雨悦 / 沈腾 / 马丽 / 常远 / 李诚儒 / 黄才伦 / 李嘉琦 / 郝瀚 / 黄子韬 / 王成思 / 高海宝 / 杨铮 / 史彭元 / 张熙然 / 黄品沅 / 杨皓宇 / 徐志胜 / 杜晓宇 / 李海银 / 陶亮 / 王赞 / 李唯贺 / 陈昊明 / 孟芷旭 / 赵一霖 / 2022-07-29(中国大陆)","rating":"2023-02-07","comment":""},{"title":"我和我的祖国","alt":"https://movie.douban.com/subject/32659890/","image":"https://minio.mythsman.com/douban/bf5c3b4dee10f2c2ded4ab7a2fd7e55f.jpg","meta":"剧情 / 文宁 / 修梦迪 / 薛晓路 / 何可可 / 徐峥 / 管虎 / 张冀 / 文宁 / 修梦迪 / 薛晓路 / 何可可 / 徐峥 / 管虎 / 张冀 / 黄渤 / 张译 / 韩昊霖 / 杜江 / 葛优 / 刘昊然 / 宋佳 / 王千源 / 任素汐 / 吴京 / 朱一龙 / 王东 / 陈飞宇 / 佟丽娅 / 欧豪 / 张嘉益 / 惠英红 / 龚蓓苾 / 田壮壮 / 韩东君 / 辛柏青 / 周冬雨 / 任达华 / 江珊 / 王砚辉 / 耿乐 / 姜武 / 梁静 / 佟大为 / 魏晨 / 胡军 / 王天辰 / 彭昱畅 / 罗海琼 / 郭丞 / 周依然 / 樊雨洁 / 刘涛 / 马伊琍 / 张建亚 / 徐峥 / 王洛勇 / 高亚麟 / 王道铁 / 程禹森 / 马书良 / 景海鹏 / 陈冬 / 雷佳音 / 张子枫 / 陶虹 / 郭京飞 / 袁文康 / 贾晨飞 / 邵汶 / 张芝华 / 段博文 / 郎平 / 2019-09-30(中国大陆)","rating":"2023-02-07","comment":""},{"title":"爱情公寓","alt":"https://movie.douban.com/subject/24852545/","image":"https://minio.mythsman.com/douban/a881b56e5e4c79a3d325957595489f7c.jpg","meta":"喜剧 / 冒险 / 汪远 / 邹杰 / 王志宏 / 张珮珏 / 汪远 / 邹杰 / 王志宏 / 张珮珏 / 陈赫 / 袁弘 / 娄艺潇 / 邓家佳 / 孙艺洲 / 李佳航 / 李金铭 / 刘天佐 / 赵志伟 / 张双利 / 徐磊 / 韦正 / 汪远 / 朱桢 / 于立 / 榕榕 / 罗姝涵 / 许和琪 / 刘雨昕 / 张希雅 / 孔雪儿 / 关凯元 / 张悠然 / 周煊 / 丧钟大师 / 老驴 / 张天馨 / 刘宇馨 / 陈旭明 / 王思博 / 赵子豪 / 杨朕 / 郝宇 / 徐梦洁 / 常钰 / 韩丹 / 严丰 / 郭林钧 / 2018-08-10(中国大陆)","rating":"2023-02-07","comment":""},{"title":"你好，李焕英","alt":"https://movie.douban.com/subject/34841067/","image":"https://minio.mythsman.com/douban/42f1ee92b239bd11ddb4643ea4c1647b.jpg","meta":"剧情 / 喜剧 / 奇幻 / 贾玲 / 孙集斌 / 王宇 / 刘宏禄 / 卜钰 / 郭宇鹏 / 贾玲 / 孙集斌 / 王宇 / 刘宏禄 / 卜钰 / 郭宇鹏 / 贾玲 / 张小斐 / 沈腾 / 陈赫 / 刘佳 / 丁嘉丽 / 王琳 / 杜源 / 何翯 / 何欢 / 韩云云 / 包文婧 / 葛珊珊 / 史策 / 黄小猫 / 许君聪 / 卜钰 / 刘宏禄 / 魏翔 / 孙集斌 / 张泰维 / 郭宇鹏 / 朱天福 / 王宇 / 冯巩 / 乔杉 / 王小利 / 宋晓峰 / 董若溪 / 曹贺军 / 赵婷婷 / 姬晴 / 郭祥鹏 / 李一峰 / 潘斌龙 / 2021-02-12(中国大陆)","rating":"2023-02-07","comment":""},{"title":"哥，你好","alt":"https://movie.douban.com/subject/35102469/","image":"https://minio.mythsman.com/douban/82351eb6b950703a768486364b26c0b1.jpg","meta":"剧情 / 喜剧 / 奇幻 / 董天翼 / 董天翼 / 马丽 / 常远 / 魏翔 / 贾冰 / 黄允桐 / 韩彦博 / 张一鸣 / 郝鹏飞 / 李一宁 / 李志荟 / 刘语乔 / 张佳雯 / 吕宁 / 王伟 / 2022-09-09(中国大陆)","rating":"2023-02-07","comment":""},{"title":"穿过寒冬拥抱你","alt":"https://movie.douban.com/subject/35307456/","image":"https://minio.mythsman.com/douban/6d6e001b82ecbc266eb63e673595be4f.jpg","meta":"剧情 / 爱情 / 薛晓路 / 柳青 / 张铂雷 / 郝哲 / 王越 / 薛晓路 / 柳青 / 张铂雷 / 郝哲 / 王越 / 黄渤 / 贾玲 / 朱一龙 / 徐帆 / 高亚麟 / 吴彦姝 / 许绍雄 / 王骁 / 周冬雨 / 刘昊然 / 乔欣 / 王一楠 / 刘天佐 / 田小洁 / 孙茜 / 张宥浩 / 尚语贤 / 2021-12-31(中国大陆)","rating":"2023-02-07","comment":""},{"title":"以年为单位的恋爱","alt":"https://movie.douban.com/subject/35446144/","image":"https://minio.mythsman.com/douban/fdb9eec69ca0d0f5ebb0c82768236844.jpg","meta":"爱情 / 付丹迪 / 刘迟 / 蔚捷 / 付丹迪 / 刘迟 / 蔚捷 / 毛晓彤 / 杨玏 / 孙千 / 张海宇 / 刘佳 / 傅首尔 / 包文婧 / 王彦霖 / 晏紫东 / 斯外戈 / 董思怡 / 丁冠森 / 薇薇 / 柯博伦 / 2021-12-31(中国大陆)","rating":"2023-02-07","comment":""},{"title":"沐浴之王","alt":"https://movie.douban.com/subject/34894753/","image":"https://minio.mythsman.com/douban/0558f98deac016d52c4c08f514545d2e.jpg","meta":"喜剧 / 张少初 / 邢文雄 / 易小星 / 张少初 / 邢文雄 / 易小星 / 彭昱畅 / 乔杉 / 卜冠今 / 苇青 / 金世佳 / 洪剑涛 / 房子斌 / 张本煜 / 黄垲翔 / 朱时茂 / 沈南 / 桑平 / 白客 / 柯达 / 刘循子墨 / 巴多 / 孔连顺 / 李建义 / 2020-12-11(中国大陆)","rating":"2023-02-07","comment":""},{"title":"最好的我们","alt":"https://movie.douban.com/subject/26266919/","image":"https://minio.mythsman.com/douban/d06dcf97cc2dcc5fa9ad9b8f09a8bb93.jpg","meta":"剧情 / 爱情 / 章笛沙 / 黄斌 / 黄墨奇 / 章笛沙 / 黄斌 / 黄墨奇 / 陈飞宇 / 何蓝逗 / 惠英红 / 陶慧敏 / 汪苏泷 / 董力 / 蒋紫嫣 / 周楚濋 / 方文强 / 王初伊 / 高文峰 / 陈帅 / 秦昊 / 张小厚 / 2019-06-06(中国大陆)","rating":"2023-02-07","comment":""},{"title":"奇迹·笨小孩","alt":"https://movie.douban.com/subject/35312437/","image":"https://minio.mythsman.com/douban/a9aed9dc04d16275ea426f4289d1206c.jpg","meta":"剧情 / 周楚岑 / 修梦迪 / 文牧野 / 韩晓邯 / 钟伟 / 周楚岑 / 修梦迪 / 文牧野 / 韩晓邯 / 钟伟 / 易烊千玺 / 田雨 / 陈哈琳 / 齐溪 / 公磊 / 许君聪 / 王宁 / 黄尧 / 巩金国 / 田壮壮 / 王传君 / 章宇 / 张志坚 / 咏梅 / 杨新鸣 / 徐峥 / 岳小军 / 朱俊麟 / 王丽涵 / 贾弘逍 / 韩笑 / 孙征宇 / 黄艺馨 / 修梦迪 / 苏子航 / 郑伊倩 / 丁文博 / 陈翊曈 / 2022-02-01(中国大陆)","rating":"2023-02-07","comment":""},{"title":"鼠胆英雄","alt":"https://movie.douban.com/subject/27073057/","image":"https://minio.mythsman.com/douban/b105f5af462d08482d8b438a05b0d22a.jpg","meta":"喜剧 / 束焕 / 束焕 / 岳云鹏 / 佟丽娅 / 田雨 / 袁弘 / 韩童生 / 蔡明 / 刘威 / 于谦 / 大鹏 / 雷佳音 / 于洋 / 华少 / 孙越 / 邢佳栋 / 李解 / 耿长军 / 孟瑶 / 张萌 / 常亮 / 郭丰周 / 桑平 / 2019-08-02(中国大陆) / 2019-06-16(上海电影节)","rating":"2023-02-07","comment":""},{"title":"胖子行动队","alt":"https://movie.douban.com/subject/27149818/","image":"https://minio.mythsman.com/douban/56a07c121deb9e701ff4bbd4a2d4a4b7.jpg","meta":"喜剧 / 动作 / 张鹏 / 刘智林 / 张鹏 / 刘智林 / 文章 / 包贝尔 / 郭京飞 / 克拉拉 / 李嘉琦 / 许君聪 / 曾一竣 / 张梦露 / 戚玉武 / 仓田保昭 / 木幡龙 / 宋佳 / 文隽 / 2018-09-30(中国大陆)","rating":"2023-02-07","comment":""},{"title":"误杀","alt":"https://movie.douban.com/subject/30176393/","image":"https://minio.mythsman.com/douban/a080b375530c8954ae49cb5181778c22.jpg","meta":"剧情 / 悬疑 / 犯罪 / 杨薇薇 / 翟培 / 李鹏 / 范凯华 / 秦语谦 / 雷声 / 杨薇薇 / 翟培 / 李鹏 / 范凯华 / 秦语谦 / 雷声 / 肖央 / 谭卓 / 陈冲 / 姜皓文 / 秦沛 / 边天扬 / 许文姗 / 张熙然 / 施名帅 / 黄健玮 / 陈志朋 / 2019-12-13(中国大陆) / 2020-07-20(中国大陆重映) / 2019-12-07(大规模点映)","rating":"2023-02-07","comment":""},{"title":"扫黑·决战","alt":"https://movie.douban.com/subject/35164328/","image":"https://minio.mythsman.com/douban/f16177e8c1d3ae0d796db3973b239c87.jpg","meta":"剧情 / 动作 / 犯罪 / 樊菁 / 蒋丽华 / 吕聿来 / 岳小军 / 樊菁 / 蒋丽华 / 吕聿来 / 岳小军 / 姜武 / 张颂文 / 金世佳 / 李倩 / 赵毅 / 焦刚 / 尤勇智 / 刘琳 / 白志迪 / 王丽云 / 钱波 / 王佳佳 / 董博睿 / 徐可珑 / 张康乐 / 阿如那 / 蒋雪鸣 / 陈进 / 宗俊涛 / 涂圣成 / 王浩丞 / 吴双 / 范诗然 / 柳俊岐 / 秦海 / 钱漪 / 张天舒 / 王欣嘉 / 贾凤柱 / 王若溪 / 顾语涵 / 王峰 / 王建龙 / 张海怡 / 王静宇 / 2021-05-01(中国大陆)","rating":"2023-02-07","comment":""}]
+        }
+
+        let nav = {
+            page: 0,
+            pageMax: 1,
+            action: 'collect'
+        }
+
+        let meta_max_line = 4;
+        let item_per_page = 10;
+
+        // ======== index ========
+
+        function tabClick(node, action) {
+            for (let childNode of node.parentNode.children) {
+                if (childNode.classList.contains('hexo-douban-tab-' + action)) {
+                    childNode.classList.add('hexo-douban-tab-active');
+                } else {
+                    childNode.classList.remove('hexo-douban-tab-active');
+                }
+            }
+
+            renderList(action, 1)
+        }
+
+
+        // ======== pagination ========
+        (function initPagination() {
+            let firstpage = document.querySelector(".hexo-douban-firstpage");
+            let previouspage = document.querySelector(".hexo-douban-previouspage");
+            let nextpage = document.querySelector(".hexo-douban-nextpage");
+            let lastpage = document.querySelector(".hexo-douban-lastpage");
+
+            //add listener
+            firstpage.onclick = () => renderList(nav.action, 1);
+            previouspage.onclick = () => renderList(nav.action, Math.max(1, nav.page - 1));
+            nextpage.onclick = () => renderList(nav.action, Math.min(nav.page + 1, nav.pageMax));
+            lastpage.onclick = () => renderList(nav.action, nav.pageMax);
+        })();
+
+
+        // ======== init index ========
+
+        (function initIndex() {
+            let tabDo = document.querySelector(".hexo-douban-tab-do");
+            tabDo.onclick = () => tabClick(tabDo, 'do');
+
+            let tabWish = document.querySelector(".hexo-douban-tab-wish");
+            tabWish.onclick = () => tabClick(tabWish, 'wish');
+
+            let tabCollect = document.querySelector(".hexo-douban-tab-collect");
+            tabCollect.onclick = () => tabClick(tabCollect, 'collect');
+
+            tabCollect.click();
+        })();
+
+        // ======== render ========
+        function renderList(action, page) {
+            if (action === nav.action && page === nav.page) {
+                return
+            }
+            nav.page = page
+            nav.pageMax = Math.max(1, Math.floor((data[action].length - 1) / item_per_page) + 1)
+            nav.action = action
+
+            document.querySelector('.hexo-douban-pagenum').textContent = `${nav.page} / ${nav.pageMax}`
+
+            let container = document.querySelector('.hexo-douban-items')
+            container.innerHTML = ''
+            for (let i = (page - 1) * item_per_page; i < Math.min(page * item_per_page, data[action].length); i++) {
+                container.append(renderItem(action, data[action][i]))
+            }
+        }
+
+        function renderItem(action, data) {
+            let item = document.createElement('div')
+            item.className = 'hexo-douban-item'
+
+            let picture = document.createElement('div')
+            picture.className = 'hexo-douban-picture'
+
+            let img = document.createElement('img')
+            img.src = data.image
+            img.loading = 'lazy'
+            img.referrerPolicy = 'no-referrer'
+            picture.append(img)
+
+            let info = document.createElement('div')
+            info.className = 'hexo-douban-info'
+
+            let title = document.createElement('div')
+            title.className = 'hexo-douban-title'
+
+            let link = document.createElement('a')
+            link.href = data.alt
+            link.target = '_blank'
+            link.textContent = data.title
+            title.append(link)
+
+            let meta = document.createElement('div')
+            meta.className = 'hexo-douban-meta'
+            meta.textContent = data.meta
+            meta.setAttribute('style', `-webkit-line-clamp: ${meta_max_line}`);
+
+            let rating = document.createElement('div')
+            rating.className = 'hexo-douban-rating'
+            rating.textContent = data.rating
+
+            let comment = document.createElement('div')
+            comment.className = 'hexo-douban-comment'
+            comment.textContent = data.comment
+
+            info.append(title, meta, rating, comment)
+
+            item.append(picture, info)
+            return item
+        }
+
+    })();
+
+</script>
+
+</div></div></div></main><footer id="footer"><div id="sco-footer-bar"><div class="footer-logo"><span class="scoicon">Solitude</span></div><div class="footer-bar-description">来自王卓Sco - 宁静致远，热爱生活。的文章</div><a class="footer-bar-link" href="/">了解更多</a></div><div id="footer_deal"><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/wleelw" title="Github"><i class="scoicon  sco-github-line"></i></a><a class="deal_link" href="mailto:wleelw@wzsco.top" title="Mail"><i class="scoicon  sco-mail-line"></i></a><div class="footer_mini_logo" id="footer_mini_logo" title="返回顶部" onclick="sco.toTop()"><img data-lazy-src="https://bu.dusays.com/2023/11/08/654af68b25bb8.jpg" alt="返回顶部"></div><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/1329819902" title="Bilibili"><i class="scoicon  sco-bilibili-line"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://v.douyin.com/iJsLc8jt/" title="抖音"><i class="scoicon  sco-douyin-fill"></i></a></div><div id="sco-footer"><div class="footer-group"><h3 class="footer-title">导航</h3><div class="footer-links"><a class="footer-item" href="/archives/" title="归档">归档</a><a class="footer-item" href="/categories/" title="分类">分类</a><a class="footer-item" href="/tags/" title="标签">标签</a></div></div><div class="footer-group"><h3 class="footer-title">服务</h3><div class="footer-links"><a class="footer-item" target="_blank" rel="noopener" href="https://aliyun.com/" title="阿里云">阿里云</a><a class="footer-item" target="_blank" rel="noopener" href="https://v6.51.la/" title="51la统计">51la统计</a><a class="footer-item" target="_blank" rel="noopener" href="https://tongji.baidu.com/" title="百度统计">百度统计</a></div></div><div class="footer-group"><h3 class="footer-title">支持</h3><div class="footer-links"><a class="footer-item" href="/about/" title="打赏记录">打赏记录</a></div></div><div class="footer-group"><h3 class="footer-title">协议</h3><div class="footer-links"><a class="footer-item" href="/cookies/" title="Cookies">Cookies</a><a class="footer-item" href="/privacy/" title="用户协议">用户协议</a><a class="footer-item" href="/copyright/" title="版权协议">版权协议</a></div></div><div class="footer-group"><div class="footer-title-group"><h3 class="footer-title">友链</h3><a class="random-friends-btn" href="javascript:randomLinksList();"><i class="scoicon sco-refresh-line"></i></a></div><div class="footer-links" id="friend-links-in-footer"></div></div></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2023 - 2024 By&nbsp;<a class="footer-bar-link" href="/">王卓Sco</a></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/wleelw/hexo-theme-solitude" title="主题">主题</a><a class="footer-bar-link" href="/atom.xml" title="订阅">订阅</a><a class="footer-bar-link cc" href="/license/"><i class="scoicon sco-copyright-line"></i><i class="scoicon sco-creative-commons-by-line"></i><i class="scoicon sco-creative-commons-nc-line"></i><i class="scoicon sco-creative-commons-nd-line"></i></a></div></div></div><div class="needEndHide" id="cookies-window"><div class="cookies-window-title">协议提醒助手</div><div class="cookies-window-content"><span class="cookies-tip">查看本站为你的个人隐私做出的努力</span><a class="cookies-link" href="/privacy/" title="本站如何保护你的隐私"><i class="scoicon sco-right-btn-fill"></i></a></div></div></footer></div><!-- inject body--><div><script src="/js/main.js?v=1.5.1"></script><script src="/js/utils.js?v=1.5.1"></script><script src="https://cdn.cbd.int/macy@2.5.1/dist/macy.js"></script><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="scoicon sco-arrow-left-line"></i></div><div class="rightMenu-item" id="menu-forward"><i class="scoicon sco-arrow-right-line"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="scoicon sco-restart-line"></i></div><div class="rightMenu-item" id="menu-top"><i class="scoicon sco-arrow-up-line"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="scoicon sco-copy-fill"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="scoicon sco-clipboard-fill"></i><span>粘贴文本</span></div><div class="rightMenu-item" id="menu-newwindow"><i class="scoicon sco-window-fill"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="scoicon sco-link-line"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="scoicon sco-copy-fill"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="scoicon sco-download-cloud-fill"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-search"><i class="scoicon sco-search-line"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="scoicon sco-play-fill"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="scoicon sco-skip-back-fill"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="scoicon sco-skip-forward-fill"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open('https://music.163.com/#/playlist?id=3067156818', '_blank');"><i class="scoicon sco-play-list-2-line"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="scoicon sco-copy-fill"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-Link" id="menu-randomPost"><i class="scoicon sco-signal-tower-fill"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="scoicon sco-checkbox-multiple-blank-fill"></i><span>文章分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="scoicon sco-price-tag-fill"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-copy"><i class="scoicon sco-external-link-fill"></i><span>复制地址</span></div><div class="rightMenu-item" id="menu-darkmode"><i class="scoicon sco-moon-clear-fill"></i><span class="menu-darkmode-text">深色模式</span></div><div class="rightMenu-item" id="menu-translate"><i class="scoicon sco-panben-line"></i><span>轉為繁體</span></div></div></div><div id="rightmenu-mask"></div><script src="/js/rightside.js?v=1.5.1"></script><script src="https://cdn.cbd.int/solitude-source/js/universe.min.js"></script><script>dark()
+</script><script src="/js/tw_cn.js?v=1.5.1"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.5/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/swiper@11.0.5/swiper-bundle.min.js"></script><script src="https://cdn.cbd.int/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.cbd.int/meting@2.0.1/dist/Meting.min.js"></script><script>const meting_api = 'https://meting.naokuo.top/api?server=:server&type=:type&id=:id&auth=:auth&r=:r';
+</script><script src="/js/covercolor/local.js?v=1.5.1"></script><script src="https://cdn.cbd.int/solitude-source/js/waterfall.min.js"></script><script src="/js/music.js?v=1.5.1"></script><script src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js"></script></div><div id="js-pjax"><script id="config-diff">var PAGE_CONFIG = {
+    is_post: false,
+    is_page: false,
+    is_home: false,
+    page: '',
+    toc: false,
+    comment: false,
+}
+</script></div><script>const links = [{"name":"安知鱼","link":"https://blog.anheyu.com"},{"name":"Akilar","link":"https://akilar.top"},{"name":"Fomalhaut","link":"https://www.fomal.cc"},{"name":"山岳库博","link":"https://kmar.top"},{"name":"铭心石刻","link":"https://blog.kouseki.cn"},{"name":"张洪Heo","link":"https://blog.zhheo.com"},{"name":"Leonus","link":"https://blog.leonus.cn"},{"name":"Eurkon","link":"https://blog.eurkon.com"},{"name":"小旦","link":"https://satera.cn"},{"name":"轻笑Chuckle","link":"https://www.qcqx.cn"},{"name":"Tianli","link":"https://tianli-blog.club"},{"name":"王卓Sco","link":"https://blog.wzsco.top"},{"name":"小孙同学","link":"https://blog.sunguoqi.com"},{"name":"JayHrn","link":"https://blog.lvhrn.cn"},{"name":"Mycpen","link":"https://blog.cpen.top"},{"name":"杜老师说","link":"https://dusays.com"},{"name":"青桔气球","link":"https://blog.qjqq.cn"},{"name":"未知之旅","link":"https://blog.xenosp.cn"},{"name":"Fgaoxing","link":"https://www.yt-blog.top"},{"name":"Pupper","link":"https://pupper.cn"},{"name":"爱吃肉的猫","link":"https://meuicat.com"},{"name":"Ganzhe","link":"https://ganzhe.site"},{"name":"呓语梦轩","link":"https://blog.awaae001.top"},{"name":"GanSer","link":"https://www.gan1ser.top"},{"name":"小破站","link":"https://syml.online"},{"name":"看一千次海","link":"https://doyuodo.gitee.io/hexo/"},{"name":"琅環书生","link":"https://www.zhuangzhi.love"},{"name":"朝而往","link":"https://muerg.cn"},{"name":"Mo的记事簿","link":"https://blog.xiowo.net"},{"name":"墨尘的生活小站","link":"https://mnchen.cn"},{"name":"HiPeach","link":"https://blog.opeach.cn"},{"name":"纸鹿摸鱼处","link":"https://blog.zhilu.cyou"},{"name":"归途的秘密基地","link":"https://halo.qq-channel.cn"}]
+function travelling() {
+    const link = links[utils.randomNum(links.length)];
+    utils.snackbarShow('您即将前往 ⌈ ' + link.name + ' ⌋ , 安全性未知', false, 3000);
+    setTimeout(() => {
+        window.open(link.link, "_blank")
+    }, 3000)
+}
+</script><script>function randomLinksList() {
+    const linkcard = document.getElementById('friend-links-in-footer');
+    if (linkcard == null) return;
+
+    let data = '';
+    let linksCopy = [...links];
+    let count = Math.min(3, linksCopy.length);
+
+    for (let i = 0; i < count; i++) {
+        let index = utils.randomNum(linksCopy.length);
+        const {link, name} = linksCopy[index];
+        data += `<a class="footer-item" href="${link}" target="_blank" rel="noopener noreferrer nofollow">${name}</a>`;
+        linksCopy.splice(index, 1);
+    }
+
+    linkcard.innerHTML = data + '<a class="footer-item" href="/links/">更多</a>';
+}</script><!-- newest comment--><!-- pjax--><script>let pjaxSelectors = [
+    'title',
+    '#body-wrap',
+    '#site-config',
+    'meta[name="description"]',
+    '#js-pjax',
+    'meta[property^="og:"]',
+]
+
+const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+})
+
+document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+})
+
+document.addEventListener('pjax:complete', () => {
+    window.refreshFn()
+})
+
+document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+        pjax.loadUrl('/404.html')
+    }
+})</script><!-- search--><!-- music--><div class="needEndHide" id="nav-music" onclick="sco.musicToggle()"><div id="nav-music-hoverTips">音乐已暂停</div><meting-js id="3067156818" server="netease" type="playlist" mutex="true" preload="none" data-lrctype="0" order="random" theme="var(--sco-main)"></meting-js></div></body></html><script>const posts=["2024/03/13/hello-world copy 4/","2024/03/13/hello-world copy 3/","2024/03/13/hello-world copy 2/","2024/03/13/hello-world copy/","2024/03/13/hello-world/"];function toRandomPost(){ pjax.loadUrl('/'+posts[Math.floor(Math.random()*posts.length)]); };</script>
