@@ -109,11 +109,11 @@ const scoMusic = {
         const aplayer = document.getElementById("Music-page").querySelector("meting-js").aplayer;
         aplayer.on('loadeddata', () => {
             scoMusic.changeMusicBg();
-            scoMusic.buttonlist();
         });
         aplayer.on('timeupdate', () => {
             scoMusic.lrcupdate();
         });
+        scoMusic.buttonlist();        
     },
     getCustomPlayList: () => {
         const MusicPage = document.getElementById("Music-page");
