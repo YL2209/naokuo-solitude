@@ -12054,18 +12054,8 @@ div#banners .tags-group-all .tags-group-icon-pair a img {
   border-radius: 4px;
   background: var(--sco-main);
 }
-body[data-type="envelope"] #page {
-  border: 0;
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  background: 0 0 !important;
-}
-body[data-type="envelope"] .page-title {
-  display: none;
-}
 body[data-type="envelope"] #maincontent {
-  margin: var(--album-spacing-xxl) 0 0;
+  margin: 64px 0 0;
 }
 @media screen and (max-width: 600px) {
   body[data-type="envelope"] #beforeimg,
