@@ -41,30 +41,7 @@ const scoMusic = {
             aplayerLrcContents.style.transform = `translateY(${translateYValue}px)`;
         }
     },
-    buttonlist: () => {
-        const anMusicPage = document.getElementById("Music-page");
-        const aplayerIconMenu = anMusicPage.querySelector(".aplayer-info .aplayer-time .aplayer-icon-menu");
-        const menu_mask = document.getElementById("Music-menu-mask");        
-        function anMusicPageMenuAask() {
-            if (!document.querySelector('body[data-type="music"]')) {
-                menu_mask.removeEventListener("click", anMusicPageMenuAask);
-                return;
-            }
-            if (menu_mask) {
-                menu_mask.style.display = "";
-            }
-            anMusicPage.querySelector(".aplayer-list") && anMusicPage.querySelector(".aplayer-list").classList.remove("aplayer-list-hide");
-        }
-
-        menu_mask.addEventListener("click", anMusicPageMenuAask);
-        aplayerIconMenu.addEventListener("click", function () {
-            if (menu_mask) {
-                menu_mask.style.display = "block";
-                menu_mask.style.animation = "0.5s ease 0s 1 normal none running to_show";
-            }
-        });
-    },
-    extractValue: (input) => {
+   extractValue: (input) => {
         const valueRegex = /\("([^\s]+)"\)/g;
         const match = valueRegex.exec(input);
         return match[1];
@@ -105,15 +82,38 @@ const scoMusic = {
             aplayerLrcContents.style.transform = `translateY(${translateYValue}px)`;
         }
     },
+    buttonlist: () => {
+        const anMusicPage = document.getElementById("Music-page");
+        const aplayerIconMenu = anMusicPage.querySelector(".aplayer-info .aplayer-time .aplayer-icon-menu");
+        const menu_mask = document.getElementById("Music-menu-mask");
+
+        menu_mask.addEventListener("click", function anMusicPageMenuAask() {
+            if (!document.querySelector('body[data-type="music"]')) {
+                menu_mask.removeEventListener("click", anMusicPageMenuAask);
+                return;
+            }
+            if (menu_mask) {
+                menu_mask.style.display = "";
+            }
+            anMusicPage.querySelector(".aplayer-list") && anMusicPage.querySelector(".aplayer-list").classList.remove("aplayer-list-hide");
+        });
+
+        aplayerIconMenu.addEventListener("click", function () {
+            if (menu_mask) {
+                menu_mask.style.display = "block";
+                menu_mask.style.animation = "0.5s ease 0s 1 normal none running to_show";
+            }
+        });
+    },
     addEventListenerChangeMusicBg: () => {
         const aplayer = document.getElementById("Music-page").querySelector("meting-js").aplayer;
         aplayer.on('loadeddata', () => {
             scoMusic.changeMusicBg();
+            scoMusic.buttonlist();
         });
         aplayer.on('timeupdate', () => {
             scoMusic.lrcupdate();
         });
-        scoMusic.buttonlist()
     },
     getCustomPlayList: () => {
         const MusicPage = document.getElementById("Music-page");
